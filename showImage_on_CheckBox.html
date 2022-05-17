@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show images on checkbox</title>
+    <style>
+        img {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function displayImage() {
+
+            if (document.getElementById('chBox1').checked) {
+                document.getElementById('diffImage').style.visibility = "visible"
+                document.images['diffImage'].src = "Project_images/happy.png";
+            }
+            if (document.getElementById('chBox2').checked) {
+                document.getElementById('diffImage1').style.visibility = "visible"
+
+                document.images['diffImage1'].src = "Project_images/sad.png";
+            }
+            if (document.getElementById('chBox3').checked) {
+                document.getElementById('diffImage2').style.visibility = "visible"
+
+                document.images['diffImage2'].src = "Project_images/cry.png";
+
+            }
+            if (document.getElementById('chBox4').checked) {
+                document.getElementById('diffImage3').style.visibility = "visible"
+
+                document.images['diffImage3'].src = "Project_images/hear.png";
+            }
+        }
+
+    </script>
+    <form>
+
+        HAPPY <input type="checkbox" id="chBox1" onclick="displayImage();">
+        SAD <input type="checkbox" id="chBox2" onclick="displayImage();">
+        CRY <input type="checkbox" id="chBox3" onclick="displayImage();">
+        LOVE <input type="checkbox" id="chBox4" onclick="displayImage();"><br>
+        <img src="" id="diffImage" height="100px" width="100px">
+        <img src="" id="diffImage1" height="100px" width="100px">
+        <img src="" id="diffImage2" height="100px" width="100px">
+        <img src="" id="diffImage3" height="100px" width="100px">
+    </form>
+</body>
+
+</html>
