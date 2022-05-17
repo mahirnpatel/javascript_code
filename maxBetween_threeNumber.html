@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition of values in textbox</title>
+</head>
+
+<body>
+    <script>
+
+        //this function find out the max from the three numbers
+        function maxBetweenThreeNum() {
+
+            let num1 = parseInt(document.getElementById('txtBox1').value);
+            let num2 = parseInt(document.getElementById('txtBox2').value);
+            let num3 = parseInt(document.getElementById('txtBox3').value);
+
+            if (num1 > num2 && num1 > num3) {
+
+                document.getElementById("result").innerHTML = "The max number : " + num1;
+            }
+            else if (num2 > num1 && num2 > num3) {
+
+                document.getElementById("result").innerHTML = "The max number : " + num2;
+            } else {
+                document.getElementById("result").innerHTML = "The max number : " + num3;
+
+            }
+
+        }
+
+    </script>
+    <input type="text" id="txtBox1">  
+    <input type="text" id="txtBox2">
+    <input type="text" id="txtBox3">
+    <input type="button" value="Submit" onclick="maxBetweenThreeNum();">
+    <p id="result"></p>
+</body>
+
+</html>
