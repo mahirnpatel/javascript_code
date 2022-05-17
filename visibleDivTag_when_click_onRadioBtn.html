@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visible div when click on the radio <button></button></title>
+    <style>
+        #office_div {
+            display: none;
+        }
+
+        #dep_div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function showDiv() {
+
+            if (document.getElementById('officeWork').checked) {
+
+                document.getElementById('office_div').style.display = "block";
+
+            } else if (document.getElementById('DepWork').checked) {
+
+                document.getElementById('dep_div').style.display = "block";
+            }
+        }
+
+    </script>
+
+    <form>
+        Office work <input type="radio" id="officeWork" name="WorksRel" onclick="showDiv();">
+        Department work <input type="radio" id="DepWork" name="WorksRel" onclick="showDiv();">
+
+        <div id="office_div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis assumenda fugiat reprehenderit et
+            consequatur nihil excepturi molestias dicta, magni ratione. Dignissimos maxime quasi unde, aperiam totam ad
+            eligendi laudantium velit!
+        </div>
+
+        <div id="dep_div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis assumenda fugiat reprehenderit et
+            consequatur nihil excepturi molestias dicta, magni ratione. Dignissimos maxime quasi unde, aperiam totam ad
+            eligendi laudantium velit!
+        </div>
+    </form>
+</body>
+    
+</html>
