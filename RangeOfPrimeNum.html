@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition of values in textbox</title>
+</head>
+
+<body>
+    <script>
+
+        //this function find out the max from the three numbers
+        function rangeOFPrimeNumber() {
+            let range = parseInt(document.getElementById('txtBox1').value);
+
+            let tmp = "";
+            let flag = 0;
+            for (let i = 2; i < range; i++) {
+
+                if (i == 2) {
+                    tmp += i + " ";
+                    continue;
+                }
+                flag = 0;
+                for (let j = 2; j < i; j++) {
+
+                    if (j % i == 0) {
+                        flag = 1;
+                        break;
+
+                    }
+
+                }
+
+                if (flag == 0) {
+                    tmp += i + " ";
+                }
+            }
+            document.getElementById("result").innerHTML = "The prime number between 1 to " + range + "==> " + tmp;
+
+        }
+
+    </script>
+    <input type="text" id="txtBox1">
+    <input type="button" value="Find Range" onclick="rangeOFPrimeNumber();">
+    <p id="result"></p>
+</body>
+
+</html>
