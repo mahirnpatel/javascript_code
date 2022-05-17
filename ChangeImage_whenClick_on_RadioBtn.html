@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change image on radio button</title>
+</head>
+
+<body>
+
+    <script>
+        function changeImage() {
+            if (document.getElementById('HappyEmj').checked){
+                
+                document.images['emojiImage'].src = "Project_images/happy.png"
+            }
+
+            else if (document.getElementById('SadEmj').checked){
+                document.images['emojiImage'].src = "Project_images/sad.png"
+        }
+            else if(document.getElementById('CryEmj').checked){
+
+                document.images['emojiImage'].src = "Project_images/cry.png"
+            }
+
+
+        }
+
+    </script>
+    <form>
+        HAPPY<input type="radio" id="HappyEmj" name="forImages" onclick="changeImage();">
+        SAD<input type="radio" id="SadEmj" name="forImages" onclick="changeImage();">
+        CRY<input type="radio" id="CryEmj" name="forImages" onclick="changeImage();"><br><br>
+        <img src="Project_images/download.jpg" id="emojiImage" height="100px" width="100px">
+    </form>
+</body>
+
+</html>
