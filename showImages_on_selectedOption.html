@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show image on selected option</title>
+</head>
+<style>
+    #FlagImg {
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <script>
+
+        function ShowImage() {
+            if (document.getElementById('CountryName').value == "India") {
+                document.getElementById('FlagImg').style.visibility = "visible";
+                document.images['FlagImg'].src = "Project_images/india.png";
+
+            } else if (document.getElementById('CountryName').value == "Germany") {
+                document.getElementById('FlagImg').style.visibility = "visible";
+                document.images['FlagImg'].src = "Project_images/germany.png";
+
+            } else if (document.getElementById('CountryName').value == "Pakistan") {
+                document.getElementById('FlagImg').style.visibility = "visible";
+                document.images['FlagImg'].src = "Project_images/paksitan.png";
+
+            } else if (document.getElementById('CountryName').value == "Canada") {
+                document.getElementById('FlagImg').style.visibility = "visible";
+                document.images['FlagImg'].src = "Project_images/canada.png";
+
+            }
+        }
+    </script>
+    <form>
+
+        <select id="CountryName" onchange="ShowImage();">
+            <option>Select option</option>
+            <option id="India">India</option>
+            <option id="Germany">Germany</option>
+            <option id="Pakistan">Pakistan</option>
+            <option id="Canada">Canada</option>
+        </select><br>
+        <img src="" id="FlagImg" height="100px" width="100px">
+    </form>
+
+
+</body>
+
+</html>
