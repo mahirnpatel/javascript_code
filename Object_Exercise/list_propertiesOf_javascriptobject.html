@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var student={
+            name : "Mahir patel",
+            sclass : "XI",
+            rollno : 58
+        };
+
+        document.write("The keys of the student object ==> " + Object.keys(student));  //.key method retrun all key of the given object
+        document.write("<br>");
+
+        document.write("The values before deleting the Rollno properties ==> " + Object.keys(student)); 
+        document.write("<br>");
+        
+        delete student.rollno;  //delete keyword is used for deleting the particular property of the object 
+        
+        document.write("The values after deleting the Rollno properties ==> " + Object.keys(student));
+        document.write("<br>");
+
+        student.rollno = 58; //adding the roll number property in the object again 
+
+        document.write("The length of the Student object ==> " + Object.keys(student).length)  //this is how to find the length of the obejct 
+        
+
+    </script>
+</body>
+</html>
