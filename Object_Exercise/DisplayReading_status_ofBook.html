@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var library =[{
+            author : 'Bill Gates',
+            title : 'The Road Ahead',
+            readingStatus : true
+        },
+        {
+            author : 'Steves jobs',
+            title : 'Waiter Issacson',
+            readingStatus : true
+        },
+        {
+            author : 'Suzane collins',
+            title : 'The final book of hunger games',
+            readingStatus : false
+        }];
+
+        for(let i =0 ;i<library.length ; i++){
+            document.write(library[i].author + "," + library[i].title + ", " + library[i].readingStatus);
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
