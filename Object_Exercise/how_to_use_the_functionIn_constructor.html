@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function vehicle(name , maker ){
+
+            this.name = name;
+            this.maker = maker;
+        }
+        
+        let car1 = new vehicle('fiesta' , 'ford');
+        let car2 = new vehicle('Glanza' , 'Toyato');
+
+        document.write("The company of " + car1.maker + " " + "And the car name is : " + car1.name);
+    </script>
+</body>
+</html>
