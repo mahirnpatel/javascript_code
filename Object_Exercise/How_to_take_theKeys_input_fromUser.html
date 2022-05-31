@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let fruit = prompt("Which fruit you buy??");
+        let biscuit = prompt("Which buiscuit you want to buy??");
+        let biscuit_quantity = prompt("How much quantity??");
+
+        var shoppingCart ={
+            fruit : [fruit],
+            biscuit : [biscuit],
+            quantity : [biscuit_quantity]
+        }
+
+        document.write("The fruit the user selected : " + shoppingCart.fruit);
+        document.write(" The biscuit the user selected  : " + shoppingCart.fruit + " And the quantity is : " + shoppingCart.quantity);
+
+
+        let user ={
+            name : "john",
+            age : 30,
+            gender : "male"
+        };
+
+        alert("gender" in user);   //retrun true if the key find in the object or return false 
+        alert("fruit" in user); 
+
+        //this is the way to print the all the key and the value of user 
+        for(let userInfo in user){
+            alert(userInfo + "-----" + user[userInfo]);
+        }
+    </script>
+</body>
+</html>
