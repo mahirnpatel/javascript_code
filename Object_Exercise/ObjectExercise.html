@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var user = new Object();
+        user.name = "John";
+        user.surName = "Smith";
+        document.write("Before changing the name " +user.name + "<br>");
+
+        user.name = "Pete";
+        
+        document.write("After changing the name " +user.name + "<br>");
+
+        document.write("The numbers of key : " + Object.keys(user) + "<br>");
+        
+        delete user.name;
+        
+        document.write("The numbers of keys after deletion  : " + Object.keys(user));
+        
+    </script>
+</body>
+</html>
