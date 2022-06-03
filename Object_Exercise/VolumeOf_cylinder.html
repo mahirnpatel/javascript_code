@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+       //volume of cylinder = pieR2H
+
+        // function VolumeCyl(cylHeight , cylRadius){
+        //     cylinder_heigth = cylHeight;
+        //     cylinder_radius = cylRadius;
+        // }
+        
+       var Cylinder = new Object()  //heigth and the radius
+       Cylinder.cyl_height = 7;
+       Cylinder.cyl_radius = 4;
+       Cylinder.volume = function(){
+           let radius = this.cyl_radius / 2;
+           document.write(3.14 * radius * radius * this.cyl_height);
+       }
+        document.wrtie("The heigth and the radius of the Cylinder is : " + Cylinder.volume())
+    </script>
+</body>
+</html>
