@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button" id="fetchbtn"> -->
+    <button id="fetchBtn">FETCH BTN</button>
+    <button id="resetBtn">RESET BTN</button>
+    
+    <script>
+
+        let btn = document.getElementById('fetchBtn');
+        btn.addEventListener('click' , buttonClickHandler);
+
+        //first make the object of XMHLhttpRequest
+        //now use open function to open the server connection 
+        function buttonClickHandler(){
+
+            var xhr =  new XMLHttpRequest();
+
+            //this will open the server connection 
+            xhr.open('GET','test.txt',true);
+
+            //THIS MESSAGE WILL SHOW WHEN THE CONNECTION IS IN PROGRESS
+            xhr.onprogress = function(){
+
+                console.log("ON PROGRESS");
+            }
+
+            //THIS FUNCTION WILL RUN WHEN THE RESPONSE IS READY 
+            xhr.onload = function(){
+                console.log(this.responseText);
+            }
+
+            //SEND THE REQUEST
+            xhr.send();
+
+
+
+        }
+    </script>
+</body>
+</html>
