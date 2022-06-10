@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="fetchBtn" onclick="fetchData();">FETCH BTN</button>
+
+    <script>
+        function fetchData() {
+
+            var xhr = new XMLHttpRequest() //first create the object 
+
+            //call onreadystatechange property
+            xhr.onreadystatechange = function () {
+
+                //IF THE READY STATUS IS 4 i.e CONNECTION IS SUCCESFULLY ESTABLISHED AND READY FOR THE RESPONSE AND WHEN THE STATUS CODE IS 200 i.e IT TRANSFER DATA SUCCESFULLY
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(this.responseText);
+
+                    //OR ELSE WHEN THE STATUS CODE IS 404 i.e THAT MEANS THE DATA IS NO FOUND IN THE SERVER SIDE
+                } else if (xhr.readyState == 4 && xhr.status == 404) {
+                    console.error("Error occured");
+                }
+
+            }
+
+            //USE OPEN FUNCTION FOR CONNECTIN TO THE SERVER
+            xhr.open('GET', 'test.txt', true);
+            xhr.send(); //SEND REQUEST TO THE SERVER  
+        }
+    </script>
+</body>
+
+</html>
