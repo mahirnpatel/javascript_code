@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try, catch , finally , and Throw Statments</title>
+</head>
+
+<body>
+    <input type="text" id="txtbox">
+    <input type="button" value="Click me" onclick="myFunction();">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+
+        function myFunction() {
+            let x = document.getElementById("txtbox").value;
+
+            //FIRST THIS TRY FUNCTION WILL EXCUTE AND SEE IF THE SYNTAX AND ALL THE THING IS PROPER FOR EXCUTION AND IF IT IS THAN EXCUTE THE COMMANDS GIVEN IN THE TRY BLOCK
+
+            //OR COME TO THE CATCH BLOCK AND SHOW USER THE ERROR
+
+            //FINALLY BLOCK WILL GOING TO EXCUTE WHEATHER THE TRY OR CATCH EXCUTE OR NOT 
+            try {
+                if (x == "")
+                    throw 'Empty fieldbox';
+
+            }catch(error){
+                //YOU CAN PRINT THE NAME OF THE ERROR OR YOU CAN ALSO PRINT THE MESSAGE OF THE ERROR
+
+                document.getElementById('p1').innerHTML = error.name;
+
+            }finally{
+
+                document.getElementById('p2').innerHTML = "This will going to show in the Browser wheather the CATCH or TRY excute "
+            }
+        }
+
+    </script>
+</body>
+
+</html>
