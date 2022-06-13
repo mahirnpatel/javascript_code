@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept of class</title>
+</head>
+<body>
+    <script>
+
+        class studentInfo  {
+
+            constructor(givenName , givenMiddlename , givenLastname, givenAge , givenRollNumber , givenDivison){
+
+                this.name = givenName,
+                this.middleName = givenMiddlename,
+                this.lastName = givenLastname,
+                this.age = givenAge,
+                this.rollNumber = givenRollNumber,
+                this.divison = givenDivison
+            };
+
+            fullNameOfStudent(){
+
+                return this.name + " " + this.middleName + " " + this.lastName;
+            };
+
+            static add(a , b){
+
+                return a+b;
+            };
+        }
+
+        let s1 = new studentInfo("Mahir","N" , "Patel",19 , 58 , "B");
+        
+        document.write("The name of the student ==> " , s1.name + "<br>");
+        document.write("The full name of the student ==> " , s1.fullNameOfStudent());
+        document.write(`<br> The sum of and ==> `, studentInfo.add(1,2))
+
+
+
+
+    </script>
+</body>
+</html>
