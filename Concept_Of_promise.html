@@ -1,0 +1,44 @@
+<!-- new promise is the object which contain the two parameter which is reslove and reject 
+
+if the given situation is fullfiled by than it calls the reslove function which retruns the string or else it calls the reject function which returns the string 
+
+for catching the string which is retrun by the resolve function we use the Then function and for the reject CATCH function  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept of promise</title>
+</head>
+
+<body>
+    <script>
+
+        let p = new Promise(function (resolve, reject) {
+            let a = 1 + 1;
+
+            if (a == 2) {
+                resolve('Resolved');
+            } else {
+                reject('Rejected by the network');
+            }
+        });
+
+        p.then(function (message) {
+            // console.log("This is  ", message);
+            document.write("This is  ", message);
+
+        }).catch((message) => {
+
+            // console.log('This is not', message);
+            Document.write('This is not', message);
+        });
+
+
+    </script>
+</body>
+
+</html>
