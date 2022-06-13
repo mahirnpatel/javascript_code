@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type writer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+
+        #txtBox1 {
+
+            height: 100px;
+            width: 700px;
+            border: 2px black solid;
+        }
+
+
+        #p1 {
+            margin: 0px;
+            padding: 0px;
+            border: 2px pink dotted;
+            position: relative;
+            left: 373px;
+        }
+
+        #TimerWordPos {
+            position: relative;
+            left: 422px;
+            bottom: 20px;
+        }
+
+        #Typing-heading {
+
+            text-decoration-line: underline;
+            font-style: italic;
+        }
+
+        .center {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body onload="randomAlphabetGenrate();">
+
+
+    <form>
+        <center>
+            <h2 id="Typing-heading">Start Typing in Below Box</h2>
+
+            <input type="text" id="txtBox1" onkeypress=" whenPressEnter(event);  ShowTimer();randomAlphabetGenrate(); wrongCharacter(event);" placeholder="Start Typing from here............"> <br>
+
+            <h3>NOTE :- Press Enter when you completed....</h3>
+        </center>
+        <span id="TimerWordPos">Timer</span><span id="p1">00:00:00</span>
+    </form>
+
+
+    <table style="height: 100px; width: 700px;" class="center">
+        <tr>
+            <td><button id="q"> Q</button></td>
+            <td><button id="w"> W</button></td>
+            <td><button id="e"> E</button></td>
+            <td><button id="r"> R</button></td>
+            <td><button id="t"> T</button></td>
+            <td><button id="y"> Y</button></td>
+            <td><button id="u"> U</button></td>
+            <td><button id="i"> I</button></td>
+            <td><button id="o"> O</button></td>
+            <td><button id="p"> P</button></td>
+        </tr>
+        <tr>
+            <td><button id="a"> A</button></td>
+            <td><button id="s"> S</button></td>
+            <td><button id="d"> D</button></td>
+            <td><button id="f"> F</button></td>
+            <td><button id="g"> G</button></td>
+            <td><button id="h"> H</button></td>
+            <td><button id="j"> J</button></td>
+            <td><button id="k"> K</button></td>
+            <td colspan="2"><button id="l">L</button></td>
+        </tr>
+        <tr>
+            <td><button id="z"> Z</button></td>
+            <td><button id="x"> X</button></td>
+            <td><button id="c"> C</button></td>
+            <td><button id="v"> V</button></td>
+            <td><button id="b"> B</button></td>
+            <td><button id="n"> N</button></td>
+            <td colspan="4"><button id="m">M</button> </td>
+
+        </tr>
+        <tr>
+            <td colspan="10">
+                <center><button id="backspace"> BACKSPACE</button></center>
+            </td>
+        </tr>
+
+    </table>
+    <p id="noOfCharacter"></p>
+    <p id="noOfWrongCharacter"></p>
+    <p id="noOfTimeTakenByUser"></p>
+
+
+    <script>
+        var minute = 0;  //minutes counter
+        var Second = 0; //second counter
+        var milliSecond = 0; //millisecond counter
+        var flag = false; //flag 
+        var user_input = ""; //stores the key pressed value
+        var flagForOneTime = false; //flag
+        var popCharacterFromArray; //stores the poped character from array
+        var tmp; //this is used for storing the presses key
+        var spaceUnicode=32;  //this is for inidicating space 
+        //array which stores the alphabet 
+        var x=0; //this store the unicode value of evey pressed character
+        var pressedWrongCharacter =0 ;
+        var counterForEnter = 0;
+        var alphabetArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "backspace"];
+
+
+        //this function is for disabled the textbox
+        function disabledTxtBox(){
+            document.getElementById("txtBox1").disabled = true;
+        }
+
+        //this function is for enabling the text box
+        function enableTxtBox(){
+            document.getElementById("txtBox1").disabled = false;
+        }
+
+        function changeColourBackToNormal(changeElementColour) {
+
+            document.getElementById(changeElementColour).style.backgroundColor = "white";
+
+        }
+
+        //this function is target when user press the wring character from keyboard
+       function wrongCharacter(event){
+            
+                if(x == spaceUnicode){
+                   return
+               }
+           if(event.key != tmp){
+              
+               pressedWrongCharacter++;  //count the number of wrong pressed characters
+            event.preventDefault();
+           }
+       }
+
+        //this function genrate the random number and poped the randome character from the array
+        function randomAlphabetGenrate() {
+            let randomNumber = Math.floor((Math.random() * 26) + 1);
+
+            if (flagForOneTime == false) {
+
+                popCharacterFromArray = alphabetArray[randomNumber];
+                tmp = popCharacterFromArray;
+                
+                colourTheParticularBlock(popCharacterFromArray);
+                
+                flagForOneTime = true;
+                
+            }
+            else {
+                
+                //if the condition matched than change the colour of the btn and give the new character 
+                if (user_input == popCharacterFromArray || x == spaceUnicode) {
+                    
+                    changeColourBackToNormal(popCharacterFromArray);  //this function change the colour back to the white  
+                    
+                    tmp = popCharacterFromArray;
+                    popCharacterFromArray = alphabetArray[randomNumber];
+
+                    colourTheParticularBlock(popCharacterFromArray);  //change the colour of  the button randomly
+
+                } 
+
+            }
+
+        }
+
+        //this function is used for the change the colour the btn of poped character from the array
+        function colourTheParticularBlock(test) {
+
+            document.getElementById(test).style.backgroundColor = "red";
+        }
+
+
+        //this function is for display the timer on the screem
+        function ShowTimer() {
+            if(counterForEnter == 0 && user_input == "Enter"){
+                counterForEnter++;
+                return
+            }else{
+
+            if (flag == true) {
+                // alert("flag is true");
+            } else {
+                milliSecond++;
+
+                if (milliSecond == 60) {
+
+                    Second++;
+                    milliSecond = 0;
+
+                } else if (Second == 60) {
+
+                    minute++;
+                    Second = 0;
+                }
+                document.getElementById("p1").innerHTML = minute + ":" + Second + ":" + milliSecond;
+                clearTimer = setTimeout(ShowTimer, 100);
+            }
+        }
+    
+    }
+
+        //this function check the result of the user when user press enter
+        function whenPressEnter(event){
+            user_input = event.key;
+          x  = event.charCode;
+
+          if(counterForEnter ==1 && user_input == "Enter"){
+              alert("Please write some content than press enter");
+              counterForEnter++;
+              return;
+          }
+            if (event.key == "Enter") {
+                flag = true;
+                speedResult();
+            }
+        }
+
+        //this function calculate the speed result of the user 
+        function speedResult() {
+            let x = document.getElementById("txtBox1").value;
+            let stringLength = x.length;
+
+            if (stringLength == Second) {
+                alert("Good Performance");
+
+            } else if (stringLength < Second) {
+                alert("Bad Performance ")
+
+            } else if (stringLength > Second) {
+                alert("Awwsome Performance");
+            }
+
+            document.getElementById('noOfCharacter').innerHTML = "You Entered : " + stringLength;
+            document.getElementById('noOfWrongCharacter').innerHTML = "Number of wrong characters you enterd : " + pressedWrongCharacter;
+            document.getElementById('noOfTimeTakenByUser').innerHTML = "Time Taken ==> " + minute + ":" + Second + ":" + milliSecond;
+        }
+    </script>
+
+</body>
+
+</html>
