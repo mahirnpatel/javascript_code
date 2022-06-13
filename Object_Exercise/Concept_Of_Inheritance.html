@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class studentInfo{
+
+            constructor(name , rollNumber){
+
+                this.name = name,
+                this.roll = rollNumber
+            };
+            printstudent(){
+
+                return ` name : ${this.name} , Roll-Number : ${this.roll}`
+            }
+        }
+
+        class marks extends studentInfo{
+                constructor(name , rollNumber , english, hindi){
+                    super(name , rollNumber);
+                    this.english = english,
+                    this.hindi = hindi
+                };
+
+                printMarks(){
+
+                    return `English marks : ${this.english} , Hindi-Marks : ${this.hindi}`
+                }
+        }
+
+        class result extends marks{
+            constructor(name , rollNumber , english , hindi){
+
+                super(name , rollNumber , english , hindi);
+
+                this.total=0;
+            }
+
+            totalOfStudent(){
+
+                 this.total = this.english + this.hindi;
+                return `Total : ${this.total}`;
+            }
+        }
+        // var s1 = new studentInfo('mahir' , 58);
+        // var Result_s1 = new marks("Mahir" , 58 , 90 , 85)
+        
+        var resultS1 = new result("Mahir" , 58 , 10 , 20);
+        document.write(resultS1.printstudent());
+        document.write("<br>");
+
+        document.write(resultS1.printMarks())
+        document.write("<br>");
+        
+        document.write(resultS1.totalOfStudent());
+    </script>
+</body>
+</html>
