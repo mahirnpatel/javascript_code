@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="populateList">Populate-the-List</button>
+
+    
+        <ul id="list">
+        </ul>
+    
+    <script>
+        let populateBtn = document.getElementById('populateList');
+        populateBtn.addEventListener('click' , populateBtnList);
+
+        function populateBtnList(){
+
+            console.log("Populate button pressed");
+            
+            //FIRST MAKE THE OBJECT OF XMLHTTPREQUEST
+            let xhr = new XMLHttpRequest();
+
+            //ESTABLISHED THE CONNECTION WITH THE SERVER
+            xhr.open('GET','https://reqres.in/api/unknown',true);
+
+            //THIS WILL PRINT WHEN THE PROCESS IS ON PROGRESS
+            xhr.onprogress = function(){
+                console.log("ON PROGRESS");
+            }
+
+            //WHAT TO DO WHEN ON LOAD FUNCTION IS CALLED
+            xhr.onload = function(){    
+
+                    //FIRST CONVERT THE JSON DAtA IN THE OBJECT FORM
+                    let obj = JSON.parse(this.responseText)
+
+                    //THIS IS FOR THE APPENDING THE DATA IN THE LIST
+                    let list = document.getElementById('list');
+
+                    let emptyStr = "";
+                    
+                    //THAN ACESS THE DATA PART IN THE OBJECT
+                    let data = obj.data;
+
+                    //THAN ITERATE THROUG THE DATAPORTION AND PRINT THE NAME 
+                    for (i in data){
+                        emptyStr += `<li> ${data[i].name} </li>`;
+                    }
+
+                    list.innerHTML = emptyStr;
+            }
+
+            xhr.send();  //SEND THE REQUEST
+        }
+
+        
+    </script>
+</body>
+</html>
