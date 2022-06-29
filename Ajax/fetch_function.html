@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="fetchBtn" onclick="fetchData();">Fetch-Button</button>
+
+
+    <!-- <div id="containerForResponse"> -->
+    
+    <script>
+        
+    // let fetchBtn = document.getElementById('fetchBtn');  //TAKE THE BUTTON
+
+    // fetchBtn.addEventListener('click' , fetchData);  //ADD ONCLICK EVENT ON THE BUTTON AND CALL THE FUNCTION
+
+        function fetchData(){
+    
+            url = 'test.txt';  //THIS IS THE SERVER INFO
+
+            fetch().then((response)=>{
+                //THIS THEN ALSO RETRUNS THE THEN TO ANOTHER THEN TO ACCESS THE DATA WE USE TEXT()
+                return response.text();
+
+            }).then((data)=>{
+
+                //NOW THIS THEN STORES THE DATA OF THE FILE 
+                console.log(data);
+
+                //AND WHEN ERROR FOUND THAN CALL THE CATCH FUNCTION
+            }).catch(()=>{
+                console.error("Data not found");
+            });
+
+        }
+      
+    </script>
+
+    </div>
+</body>
+</html>
