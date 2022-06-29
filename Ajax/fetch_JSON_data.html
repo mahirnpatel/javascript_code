@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="fetch_btn">Fetch</button>
+    <div id="conatainer"></div>
+        <script>
+
+       let fetchBtn = document.getElementById('fetch_btn');
+        fetchBtn.addEventListener('click',fetchJsonData);
+
+        function fetchJsonData(){
+
+                fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json()).then((data)=>{
+                    
+                    console.log(data);
+
+                    for(x in data){
+
+                        document.write(`${data[x].name}-${data[x].email}<br>`);
+                    }
+                    
+                }).catch(()=> console.error("Data not found"))
+
+        }
+    </script>
+
+</body>
+</html>
