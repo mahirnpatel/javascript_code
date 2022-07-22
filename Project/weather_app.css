@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-images {
+    background-color: black;
+
+}
+
+.main-heading {
+    margin-top: 1px;
+    color: aliceblue;
+    font-size: 50px;
+    text-decoration: overline;
+    text-decoration-color: #6C21A7;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+
+}
+
+h1 {
+    font-family: 'The Nautigal', cursive;
+}
+
+.search-box {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    text-align: center;
+    height: 5%;
+    width: 18%;
+    transition: width 0.4s ease-in-out;
+    border: none;
+    border-bottom: 3px solid #6C21A7;
+    background-color: rgba(0, 128, 0, 0);
+}
+
+::placeholder {
+    color: white;
+}
+
+.search-box:focus {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #25CDA0;
+    width: 20%;
+    color: whitesmoke;
+}
+
+.search-btn {
+    position: absolute;
+    top: 15%;
+    left: 31%;
+    border: 0px;
+    height: 5%;
+    width: 7%;
+    border-radius: 4px;
+    background-color: #6C21A7;
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: yellowgreen;
+    color: black;
+}
+
+
+.india-States {
+
+    background-color: #6C21A7;
+    color: white;
+    outline: none;
+    height: 5%;
+    width: 11%;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    right: 2%;
+    top: 15%;
+}
+
+.india-Cities {
+    background-color: #6C21A7;
+    color: white;
+    outline: none;
+    height: 5%;
+    width: 11%;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    right: 13.5%;
+    top: 15%;
+}
+
+.india-States:hover {
+    background-color: yellowgreen;
+    color: black;
+}
+
+.india-Cities:hover {
+    background-color: yellowgreen;
+    color: black;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0%;
+    right: 12px;
+    margin-top: 7px;
+    /* margin-bottom: 5px; */
+    height: 405px;
+    width: 835px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.main-detail-container {
+    display: flex;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+
+}
+
+.main-data-box {
+    background-color: rgba(4, 98, 99, 0.824);
+    background-color: rgba(4, 80, 85, 0.832);
+    color: whitesmoke;
+    height: 180px;
+    width: 250px;
+    border-radius: 30px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.705);
+    text-align: center;
+    /* margin-right: 10px; */
+
+}
+
+.other-data-box {
+    background-color: rgba(4, 98, 99, 0.824);
+    background-color: rgba(4, 80, 85, 0.832);
+    color: whitesmoke;
+    height: 180px;
+    width: 250px;
+    border-radius: 30px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.705);
+    text-align: center;
+    position: relative;
+    left: 20%;
+}
+
+.sunrise-sunset {
+
+    background-color: rgba(4, 98, 99, 0.824);
+    background-color: rgba(4, 80, 85, 0.832);
+    position: absolute;
+    top: 192px;
+    left: 35%;
+    color: whitesmoke;
+    height: 100px;
+    width: 250px;
+    border-radius: 30px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.705);
+    text-align: center;
+}
+
+.main-degree {
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.city-name {
+
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.degree-dot {
+    font-size: 20px;
+    position: absolute;
+    top: 14%;
+    left: 30%;
+}
+
+.celsius {
+    font-size: 35px;
+    position: absolute;
+    top: 16%;
+    left: 33%;
+}
+
+.weather-icon {
+
+    position: relative;
+    top: 36%;
+    left: 40%;
+
+
+}
+
+.desc-of-clouds {
+    position: relative;
+    top: 40%;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+.icon-size {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+}
+
+.pressure-container {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+ 
+}
+
+.img-title {
+    position: absolute;
+    top: 32px;
+    font-size: 11px;
+}
+
+.img-desc {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+.metrics{
+    position: absolute;
+    font-size:10px;
+    left: 79px;
+    top: 15px;
+}
+.humidity-container {
+    position: absolute;
+    top: 5px;
+    left: 140px;
+}
+
+.middle-line1 {
+    position: relative;
+    left: 14px;
+    top: 55px;
+    background-color: #25CDA0;
+    height: 2px;
+    width: 220px;
+}
+.visibilty-container {
+    position: absolute;
+    top: 62px;
+    left: 10px;
+    
+}
+.uv-container {
+    position: absolute;
+    top: 62px;
+
+    left: 140px;
+}
+.middle-line2 {
+    position: relative;
+    left: 14px;
+    top: 113px;
+    background-color: #25CDA0;
+    height: 2px;
+    width: 220px;
+}
+.windSpeed-container{
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    
+}
+.windDirection-container{
+    position: absolute;
+    top: 120px;
+    left: 140px;
+}  
+.img-title1 {
+    position: absolute;
+    top: 32px;
+    left: -6px;
+    font-size: 11px;
+} 
+.img-desc1 {
+    position: absolute;
+    top: 10px;
+    left: 36px;
+}
+.metrics1{
+    position: absolute;
+    font-size:10px;
+    left: 56px;
+    top: 15px;
+}
+
+.sun-related-img{
+    position: relative;
+    left: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.sunrise-container{
+
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.sunrise-time{
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+.sunset-container{
+    position: absolute;
+    top: 10px;
+    left: 145px;
+    right:6px;
+}
+.try{
+    position: absolute;
+    font-size:10px;
+    left: 65px;
+    top: 15px;
+}
+#rise-time{
+
+    position: relative;
+    left: 11px;
+    top: 10px;
+}
+
+#set-time{
+    position: relative;
+    top: 10px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="weather_app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap" rel="stylesheet">
+<script src="validationAndAPI.js"></script>
+</head>
+
+<body onload="hideElements();">
+    <div class="container">
+
+        <div class="bg-images">
+            <img src="slowed_down.gif" alt="" height="420px" width="100%">
+        </div>
+
+        <div class="header">
+            <h1 class="main-heading">The Weather App</h1>
+
+            <nav>
+                <input type="text" class="search-box" id="search-for-temp" placeholder="Search here...">
+                <button class="search-btn" id="fetchTemp" onclick="fetchTempData();">SUBMIT</button>
+
+            </nav>
+
+        </div>
+        <div class="main-detail-container">
+            <div class="main-data-box">
+                <p class="city-name" id="searched-city"></p>
+
+                <div class="main-temp">
+                <p class="main-degree" id="main-temp"></p>
+                <p class="degree-dot" id="celsius-dot">o</p>
+                <p class="celsius" id="celsius-symbol">C</p>
+            </div>
+                <img src="" alt="" height="50px" width="50px" class="weather-icon" id="rain-desc-img">
+                <p class="desc-of-clouds" id="description-of-clouds"></p>
+            </div>
+
+            <div class="other-data-box">
+               
+                  <div class="pressure-container" id="pressure-details">
+                    <img src="pressure-gauge.png" alt="" class="icon-size ">
+                    <span class="img-desc" id="press-desc"></span>
+                    <span class="metrics">mb</span>
+                    <p class="img-title"> Pressure</p>
+                  </div>
+
+                  <div class="humidity-container" id="humid-details">
+                    <img src="humidity (1).png" alt="" class="icon-size">
+                    <span class="img-desc " id="humidity-desc"></span>
+                    <span class=" try">%</span>
+
+                    <p class="img-title">Humidity</p>
+                  </div>
+
+                  <div class="middle-line1" id="mid-line1"></div>
+
+                  <div class="visibilty-container" id="visibility-details">
+                    <img src="visible.png" alt="" class="icon-size">
+                    <span class="img-desc " id="visibility-desc"></span>
+                    <span class=" try">km</span>
+
+                    <p class="img-title">Visibility</p>
+                  </div>
+
+                  <div class="uv-container" id="uv-details">
+                    <img src="uv-index.png" alt="" class="icon-size">
+                    <span class="img-desc" id="uv-desc"></span>
+                    <p class="img-title">UV</p>
+                  </div>
+
+                  <div class="middle-line2" id="mid-line2"></div>
+
+                  <div class="windSpeed-container" id="windSpeed-details">
+                    <img src="windock.png" alt="" class="icon-size">
+                    <span class="img-desc1 " id="windSpeed-desc"></span>
+                    <span class="metrics1">km/hr</span>
+                    <p class="img-title">Wind Speed</p>
+                  </div>
+
+                  <div class="windDirection-container" id="windDirection-details">
+                    <img src="north (1).png" alt="" class="icon-size">
+                    <span class="img-desc " id="windDirection-desc"></span>
+                    <p class="img-title1">Wind Direction</p>
+                  </div>
+        </div>
+      
+        <div class="sunrise-sunset">
+            <div class="sunrise-container">
+                <img src="sun.png" alt="" class="sun-related-img" id="sunrise-img">
+                <p  id="rise-time"></p>
+            </div>
+
+            <div class="sunset-container">
+                <img src="sea.png" alt="" class="sun-related-img" id="sun-set-img">
+                <p  id="set-time"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
