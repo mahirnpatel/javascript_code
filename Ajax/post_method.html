@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    postData('https://reqres.in/api/users' , 'POST');
+    function postData(url  , type){
+
+       fetch(url , {
+
+        method : type,
+        headers : {
+            "Content-type":"application/json",
+        },
+        body : JSON.stringify({
+            name : "mahir patel"
+        }),
+       }).then(Response => {
+        return Response.json();
+       }).then(data=>{
+        console.log(data);
+       })
+           }
+    
+
+</script>
+<body>
+    <button id="post-data" >
+        press here to post the data
+    </button>
+</body>
+</html>
