@@ -5,7 +5,7 @@ const http = require('http');
 let port =  3000;
 
 const server = http.createServer((req , res) => {
-    console.log(req.url);
+    console.log(req.url); //THIS IS WLL STORE THE PATH WHICH USER ENTERS IN THE URL
       res.statusCode = 200;  //set the status code 
       res.setHeader("Content-Type","Text/html"); //set the header 
 
