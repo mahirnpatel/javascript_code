@@ -1,0 +1,32 @@
+{
+
+    "Student_info" : [
+
+        {
+            "id" : "101",
+            "name" : "Mahir",
+            "lastName" : "Patel",
+            "guradian" : true,
+            "rollNo" : "58",
+            "div" : "B"
+        },
+
+        {
+            "id" : "102",
+            "name" : "swara",
+            "lastName" : "Patel",
+            "guradian" : true,
+            "rollNo" : "13",
+            "div" : "C"
+        },
+        {
+            "id" : "103",
+            "name" : "Stuti",
+            "lastName" : "Shah",
+            "guradian" : true,
+            "rollNo" : "74",
+            "div" : "C"
+        }
+        
+    ]
+}
